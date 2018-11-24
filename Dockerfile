@@ -23,7 +23,7 @@ RUN chmod +x entrypoint_hive.sh
 
 # Adding AWS to the Hive configuration
 RUN ln -s /opt/hadoop-2.7.2/share/hadoop/tools/lib/aws-java-sdk-1.7.4.jar $HIVE_HOME/lib/.
-RUN ln -s /opt/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-aws-2.7.3.jar $HIVE_HOME/lib/.
+RUN ln -s /opt/hadoop-2.7.2/share/hadoop/tools/lib/hadoop-aws-2.7.2.jar $HIVE_HOME/lib/.
 
 ENTRYPOINT ["./entrypoint_hive.sh"]
 CMD ["hive --service metastore"]
