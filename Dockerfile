@@ -1,5 +1,5 @@
 FROM uhopper/hadoop:2.7.2
-MAINTAINER ra.vitillo@gmail.com
+MAINTAINER thiagodiogo@gmail.com
 
 ENV HIVE_VERSION 2.1.0
 ENV DOCKERIZE_VERSION v0.2.0
