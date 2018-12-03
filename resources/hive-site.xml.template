@@ -4,43 +4,55 @@
     <value>jdbc:postgresql://{{ .Env.DB_URI }}/metastore</value>
     <description>the URL of the PostgreSQL database</description>
   </property>
-  
+
   <property>
     <name>javax.jdo.option.ConnectionDriverName</name>
     <value>org.postgresql.Driver</value>
   </property>
-  
+
   <property>
     <name>javax.jdo.option.ConnectionUserName</name>
     <value>{{ .Env.DB_USER }}</value>
   </property>
-  
+
+  <property>
+     <name>hive.vectorized.execution.enabled</name>
+     <value>true</value>
+     <description>Enables query vectorization.</description>
+  </property>
+
+  <property>
+     <name>hive.vectorized.input.format.excludes</name>
+     <value/>
+     <description>Does not exclude query vectorization on any file format including Parquet.</description>
+  </property>
+
   <property>
     <name>javax.jdo.option.ConnectionPassword</name>
     <value>{{ .Env.DB_PASSWORD }}</value>
   </property>
-  
+
   <property>
     <name>datanucleus.autoCreateSchema</name>
     <value>false</value>
   </property>
-  
+
   <property>
     <name>datanucleus.fixedDatastore</name>
     <value>true</value>
   </property>
-  
+
   <property>
-    <name>datanucleus.autoStartMechanism</name> 
+    <name>datanucleus.autoStartMechanism</name>
     <value>SchemaTable</value>
-  </property> 
-  
+  </property>
+
   <property>
     <name>hive.metastore.uris</name>
     <value>thrift://0.0.0.0:9083</value>
     <description>IP address (or fully-qualified domain name) and port of the metastore host</description>
   </property>
-  
+
   <property>
     <name>hive.metastore.schema.verification</name>
     <value>true</value>
